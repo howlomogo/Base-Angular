@@ -1,0 +1,26 @@
+nav.navbar.navbar-inverse
+	.container
+		.navbar-header
+			a.pull-left(href="../index.html")
+				img(src="../img/websitelogo.png")
+			button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#navbar")
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+		#navbar.navbar-collapse.collapse
+			ul.nav.navbar-nav.navbar-right
+				//- Active class just active
+				li
+					a(href="../portfolio.html")
+						i.fa.fa-briefcase
+						| Portfolio
+
+				li
+					a(href="../about.html")
+						i.fa.fa-user
+						| About
+
+				li
+					a(href="../contact.html")
+						i.fa.fa-envelope-o
+						| Contact

@@ -1,0 +1,705 @@
+@import "reset";
+@import "variables";
+@import "nav";
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+	color: $color4;
+}
+
+h2 {
+	font-size: 38px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+h3 {
+	font-size: 30px;
+	margin-bottom: 12px;
+}
+
+h4 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.thin {
+		font-weight: 300;
+}
+
+.red {
+	color: red;
+}
+
+p,a, li, input, textarea {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-weight: 300;
+	color: $color4;
+	font-size: 24px;
+	line-height: 1.1em;
+}
+
+p {
+	margin:0px 0px 25px;
+}
+
+hr {
+	width: 50%;
+	border-top:3px dashed $color4;
+	padding: 0px;
+	margin: 0px auto;
+
+	&.hr100 {
+		width: 100%;
+	}
+}
+
+.divhead {
+	margin-bottom: 30px;
+}
+
+.btn {
+	font-family: 'Oswald', sans-serif;
+	border-radius: 0px;
+	font-size: 18px;
+}
+
+.alignvertcol {
+	display: table-cell;
+	vertical-align: middle;
+	float:none;
+}
+
+@media screen and (max-width: 991px) {
+	.alignvertcol {
+		display: block;
+		float: left;
+		text-align: center;
+		width: 100%;
+		margin: 0 auto;
+		padding-left: 30px;
+		padding-right: 30px;
+
+		img {
+			margin-bottom: 30px !important;
+		}
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.col-md-12 {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	.col-md-4 {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+
+
+
+@mixin basediv($bgcolor) {
+	width: 100%;
+	padding: 70px 0px;
+	border-bottom: solid 3px $color1;
+	background-color: $bgcolor;
+}
+
+@mixin bggradient() {
+	background: rgba(219,219,219,1);
+	background: -moz-linear-gradient(top, rgba(219,219,219,1) 0%, rgba(255,255,255,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(219,219,219,1)), color-stop(100%, rgba(255,255,255,1)));
+	background: -webkit-linear-gradient(top, rgba(219,219,219,1) 0%, rgba(255,255,255,1) 100%);
+	background: -o-linear-gradient(top, rgba(219,219,219,1) 0%, rgba(255,255,255,1) 100%);
+	background: -ms-linear-gradient(top, rgba(219,219,219,1) 0%, rgba(255,255,255,1) 100%);
+	background: linear-gradient(to bottom, rgba(219,219,219,1) 0%, rgba(255,255,255,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', endColorstr='#ffffff', GradientType=0 );
+}
+
+// HOME
+// intro
+#intro {
+	@include basediv($color3);
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	border-top: solid 3px $color1;
+	img {
+		display: block;
+	}
+
+	#introbg {
+		width:100%;
+	}
+
+	#introcontent {
+		position: absolute;
+		top:18%;
+		left:50%;
+		transform: translate(-50%, -50%);
+		z-index:10;
+		width: 100%;
+		text-align: center;
+	}
+
+	#introimgcont {
+		position: absolute;
+		top:61%;
+		left:50%;
+		transform: translate(-50%, -50%);
+		z-index:9;
+		width: 100%;
+	}
+}
+
+#introtitle {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
+	font-size: 3.8vw;
+}
+
+#introimg {
+	margin: 0 auto;
+	width: 68%;
+}
+
+#introsubhead {
+	margin-top: 0.8%;
+	font-family: 'Raleway', sans-serif;
+	color: #8f8a8a;
+	font-weight: 400;
+	font-size: 1.5vw;
+}
+// intro
+
+// hithere
+#hithere {
+	@include basediv($color4);
+	text-align: center;
+
+	h2, p {
+		color: $color1;
+	}
+
+	.btn {
+		margin-top: 30px;
+	}
+
+	hr {
+		border-top:3px dashed $color1;
+	}
+}
+// hithere
+
+// makegames
+#makegames {
+	@include basediv($color2);
+	@include bggradient();
+
+	img {
+		margin: 0px auto;
+	}
+
+	p {
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+}
+// makegames
+
+// latest
+#latest {
+	@include basediv($color4);
+	text-align: center;
+
+	h2, p {
+		color: $color1;
+	}
+
+	h4 {
+		color: $color1;
+		margin: 0px 0px 20px;
+	}
+
+	hr {
+		border-top:3px dashed $color1;
+	}
+
+	img {
+		margin-top: 20px;
+		margin-bottom: 30px;
+		border: solid 3px $color1;
+		box-shadow: 0px 0px 5px #000;
+	}
+
+	.imgcont {
+		position: relative; // Make relative so trainersanimation can fit 100% inside it.
+		width: 285px;
+		margin: 0 auto;
+	}
+
+	.effectdiv {
+		position: absolute;
+		background-color: rgba(34, 34, 34, 0.8);
+		z-index: 10;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+		border: solid 3px $color1;
+
+		h4 {
+			position: absolute;
+			top: 50%;
+    		left: 50%;
+    		margin-right: -50%;
+    		transform: translate(-50%, -50%);
+		}
+	}
+}
+
+@media screen and (max-width: 991px) {
+	#latest {
+		p {
+			margin-bottom: 30px;
+		}
+
+		.btn {
+			margin-bottom: 30px;
+		}
+	}
+}
+// latest
+
+// oscar
+#oscar {
+	@include basediv($color2);
+	@include bggradient();
+	text-align: center;
+
+	li {
+		color: $color4;
+	}
+
+	img {
+		margin: 0 auto;
+		margin-bottom: 15px;
+		width: 300px;
+	}
+
+	.btn {
+		margin-top: 10px;
+		margin-bottom: 20px;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	#oscar {
+		text-align: center;
+
+		.btn {
+			margin-bottom: 30px;
+		}
+	}
+}
+// oscar
+// HOME
+
+
+// About Page
+#about {
+	@include basediv($color3);
+	@include bggradient();
+	border-top: solid 3px $color1;
+
+	h4 {
+		color: $color4;
+	}
+
+	img {
+		box-shadow: 0px 0px 5px #000;
+		margin-bottom: 20px;
+	}
+
+	.btn {
+		margin-top: 10px;
+	}
+
+	#aboutimg {
+		text-align: center;
+	}
+}
+
+#skills {
+	@include basediv($color4);
+
+	h2 {
+		color: $color1;
+	}
+
+	hr {
+		border-top:3px dashed $color1;
+	}
+
+	i {
+		color: $color3;
+		float: right;
+	}
+	p {
+		color: $color1;
+		padding: 10px 0px 0px;
+		margin-bottom: 5px;
+	}
+	h4 {
+		color: $color1;
+		padding: 10px 0px 0px;
+	}
+
+	.singleskill {
+		padding: 20px 30px 10px;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.singleskill {
+		p:last-child {
+		margin-bottom: 30px !important;
+		}	
+	}
+}
+
+#cv {
+	@include basediv($color3);
+	@include bggradient();
+	text-align: center;
+
+	.btn {
+		margin-top: 50px;
+	}
+
+	hr {
+		&:first-child {
+		margin-bottom: 25px;
+		}
+	}
+}
+// About Page
+
+// Contact Page
+#contact {
+	@include basediv($color3);
+	@include bggradient();
+
+	border-top: solid 3px $color1;
+
+	h4 {
+		text-align: center;
+		&:last-child {
+			margin-bottom: 20px;
+		} 
+	}
+
+	form {
+		width: 700px;
+		margin: 0px auto;
+	}
+
+	input:not([type=submit]) {
+		width: 350px;
+		background-color: $color4;
+		color: $color1;
+		padding: 10px;
+		outline: none;
+		border: solid 2px $color1;
+		margin: 5px 0px 20px;
+		&:focus {
+			border: solid 2px #449D44;
+		}
+	}
+
+	textarea {
+		width: 100%;
+		height: 200px;
+		background-color: $color4;
+		color: $color1;
+		padding: 10px;
+		outline: none;
+		border: solid 2px $color1;
+		resize: none;
+		margin: 5px 0px 20px;
+		&:focus {
+			border: solid 2px #449D44;
+		}
+	}
+
+	.divhead {
+		margin-bottom: 20px;
+	}
+
+	#conform {
+		margin-top: 20px;
+		p {
+			margin: 0px 0px 0px 5px;
+		}
+	}
+
+	#conerrors {
+		margin-bottom: 20px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	#contact {
+		form {
+			width: 400px;
+			margin: 0px auto;
+		}
+	}
+}
+// Contact Page
+
+// Portfolio Overview
+#portfoliocont {
+	@include basediv($color4);
+	@include bggradient();
+	border-top: solid 3px $color1;
+
+	#portfoliotop {
+		#hrlast {
+			margin-top: 25px;
+		}
+	}
+
+	.nav-pills {
+		text-align:center;
+
+		> li {
+			float:none;
+			display:inline-block;
+			background-color: $color4;
+			border-radius: 0px;
+			margin-bottom: 5px;
+			cursor: pointer;
+		}
+
+		> li > a {
+			color: $color1;
+			&:hover {
+				background-color: $color1;
+				border-radius: 0px;
+				color: $color4;
+			}
+		}
+	}
+
+	.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+		color: $color1;
+	    background-color: $color3;
+	    border-radius: 0px;
+	}
+
+	#portfoliomain {
+		margin-top: 20px;
+
+		img {
+			border: solid 3px $color1;
+			box-shadow: 0px 0px 5px #000;
+		}
+
+		.porthead {
+			background-color: $color4;
+			padding: 20px 0px;
+
+			h3 {
+				color: $color1;
+				margin: 0px;
+			}
+		}
+
+		.portrow {
+			margin-top: 55px;
+			margin-bottom: 55px;
+		}
+
+		#othergames {
+			text-align: center;
+
+			img {
+				margin-bottom: 20px;
+			}
+
+			.btn {
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 991px) {
+	#portfoliomain {
+		text-align: center;
+		img {
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 20px;
+		}
+
+		#othergames {
+
+			.btn {
+				margin-bottom: 40px;
+			}
+
+			p {
+				margin-bottom: 10px !important;
+			}
+		}
+
+		#othergames.portrow {
+			margin-bottom: 0px !important;
+		}
+	}
+}
+// Portfolio Overview
+
+
+// Portfolio Project Page
+.portfolioproject {
+	@include basediv($color3);
+	@include bggradient();
+	border-top: solid 3px $color1;
+
+	.headimg {
+		margin-bottom: 40px;
+
+		img {
+			box-shadow: 0px 0px 10px #000;
+			margin: 0px auto;
+		}
+	}
+
+	.porthead {
+		background-color: $color4;
+		padding: 20px 0px;
+
+		h3 {
+			color: $color1;
+			margin: 0px;
+		}
+	}
+
+	.portabout {
+		margin: 40px 0px 40px;
+		ul {
+			padding: 0px 20px 20px;
+			list-style: disc
+		}
+	}
+
+	.portmedia {
+		margin: 40px 0px;
+	}
+
+	.portimgslide {
+		margin: 40px 0px;
+
+		img {
+			border: solid 5px $color4;
+			box-shadow: 0px 0px 5px #000;
+			cursor: pointer;
+			margin: 0px auto;
+		}
+	}
+
+	@media screen and (max-width: 767px) {
+		.portimgslide {
+			margin-bottom: 25px;
+			img {
+				margin-bottom: 15px !important;
+			}
+		}
+	}
+
+	.unitydiv {
+      margin: 40px auto 0px;
+      width: 800px;
+   }
+
+   .broken,
+   .missing {
+      margin: auto;
+      position: relative;
+      top: 50%;
+      width: 193px;
+   }
+}
+
+@media screen and (max-width: 767px) {
+	.porthead {
+		margin-right: 15px;
+		margin-left: 15px;
+	}
+}
+// Portfolio Project Page
+
+// Footer
+.footer {
+	@include basediv($color4);
+	min-height: 100px;
+	border-bottom: 0px;
+	border-top: solid 3px $color1;
+
+	text-align: center;
+
+	p {
+		font-family: 'Oswald', sans-serif;
+		font-weight: 300;
+		font-size: 20px;
+		color: $color2;
+		line-height: 1.5em;
+		margin-bottom: 15px;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+
+	ul {
+		margin-bottom: 35px;
+		padding: 0px;
+		list-style: none;
+	}
+
+	li {
+		display: inline;
+		margin:0px 15px;
+	}
+
+	li > a{
+		font-family: 'Oswald', sans-serif;
+		font-weight: 300;
+		font-size: 23px;
+		color: $color2;
+		&:hover {
+			color: $color1;
+		}
+	}
+}
+
+
+.carousel-control {
+  width:8%;
+  background: none !important;
+  padding: 0px;
+  margin: 0px;
+  i {
+  		position: absolute;
+		top: 50%;
+    	left: 50%;
+    	margin-right: -50%;
+    	transform: translate(-50%, -50%);
+  }
+}
